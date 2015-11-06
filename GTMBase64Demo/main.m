@@ -3,7 +3,7 @@
 //  GTMBase64Demo
 //
 //  Created by isaced on 13-7-15.
-//  Copyright (c) 2013年 isaced. All rights reserved.
+//  Copyright (c) 2013Y isaced. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,13 +17,11 @@ int main(int argc, const char * argv[])
         NSString *str = @"hello Base64!";
         NSData *data= [str dataUsingEncoding:NSUTF8StringEncoding];
         
-        if([data length]>0){
-            data = [GTMBase64 encodeData:data];//编码
-        }
+        // Encode
+        data = [GTMBase64 encodeData:data];
         
-//        if([data length]>0){
-//            data = [GTMBase64 decodeData:data];//解码
-//        }
+        // Decode
+        data = [GTMBase64 decodeData:data];
         
         NSString *retStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@",retStr);
